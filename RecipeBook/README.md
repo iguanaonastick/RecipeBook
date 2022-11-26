@@ -25,10 +25,3 @@ in a notebook. I've never gotten to it but now that I'm making this program I ca
 laptop. 
 
 
-Phase 4: Task 2
-
-Fri Nov 26 15:53:28 PST 2021
-Added recipe steak to the recipe book.
-
-Fri Nov 26 15:53:32 PST 2021
-Removed recipe steak from the recipe book.
