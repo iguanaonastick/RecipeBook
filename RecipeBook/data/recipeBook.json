@@ -1,0 +1,26 @@
+{"recipes": [
+    {
+        "difficulty": 5,
+        "already made?": false,
+        "Recipe Name": "food",
+        "instruction": "do",
+        "ingredients": "water",
+        "type": "SOUP"
+    },
+    {
+        "difficulty": 1,
+        "already made?": true,
+        "Recipe Name": "chicken soup",
+        "instruction": "cook it",
+        "ingredients": "water",
+        "type": "SOUP"
+    },
+    {
+        "difficulty": 1,
+        "already made?": true,
+        "Recipe Name": "extra",
+        "instruction": "eat",
+        "ingredients": "water",
+        "type": "SOUP"
+    }
+]}

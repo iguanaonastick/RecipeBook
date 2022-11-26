@@ -1,0 +1,20 @@
+{
+    "recipes": [
+        {
+          "difficulty": 5,
+          "already made?": false,
+          "Recipe Name": "food",
+          "instruction": "do this",
+          "ingredients": "water, rice",
+          "type": "SOUP, BREAKFAST"
+        },
+        {
+          "difficulty": 3,
+          "already made?": true,
+          "Recipe Name": "food1",
+          "instruction": "do that",
+          "ingredients": "chicken, egg",
+          "type": "PASTRY, DINNER"
+        }
+    ]
+}

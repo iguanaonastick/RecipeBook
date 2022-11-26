@@ -1,0 +1,18 @@
+{"recipes": [
+    {
+        "difficulty": 2,
+        "already made?": false,
+        "Recipe Name": "Fooder",
+        "instruction": "throw in beef then season",
+        "ingredients": "Beef, Pepper",
+        "type": "SOUP, BREAKFAST"
+    },
+    {
+        "difficulty": 2,
+        "already made?": true,
+        "Recipe Name": "Fooder1",
+        "instruction": "Add pork then season",
+        "ingredients": "Pork, Salt",
+        "type": "LUNCH, PASTRY"
+    }
+]}
