@@ -7,6 +7,7 @@ import model.EventLog;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,13 +26,15 @@ public class RecipeBookUI extends JFrame {
     private static final Color LIGHTER_BACKGROUND_COLOUR = new Color(153, 101, 237);
     private static final Color DARKER_BACKGROUND_COLOUR = new Color(93, 41, 177);
     private static final Color MATRIX_GREEN_TEXT_COLOUR = new Color(0x26D726);
-    private static final Font MAIN_TITLE_FONT = new Font("Comic Sans MS", Font.BOLD, 30);
-    private static final Font SUBTITLE_FONT = new Font("Comic Sans MS", Font.PLAIN, 15);
+    private static final Font MAIN_TITLE_FONT = new Font("TimesRoman", Font.BOLD, 30);
+    private static final Font SUBTITLE_FONT = new Font("TimesRoman", Font.PLAIN, 15);
 
     private RecipeBookApp recipeBookApp;
 
     // MAIN TITLE PAGE FIELDS
     private JLabel mainTitle;
+
+    private JLabel titleLabel;
     private JButton mainTitleButtonNextPage;
 
     // OPTIONS PAGE FIELDS
@@ -193,10 +196,10 @@ public class RecipeBookUI extends JFrame {
     private JButton giveDetailsSubmitButton;
     private JButton finalGiveDetailsSubmitButton;
 
-    // initializes mostly everything
+    // initializes frames and everything in them
     @SuppressWarnings("methodlength")
     public RecipeBookUI() {
-        super("Recipe Book 8=D");
+        super("What's cookin' good-lookin'?");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
@@ -417,29 +420,47 @@ public class RecipeBookUI extends JFrame {
     }
 
     // EFFECTS: creates a main title
+    // the whole page is basically a label
     private JLabel mainTitleLabel() {
         ImageIcon mainTitleImage = new ImageIcon("src/main/bonsaiginger.jpeg");
         Image image = mainTitleImage.getImage();
         Image newImage = image.getScaledInstance(800, 400, java.awt.Image.SCALE_SMOOTH);
         mainTitleImage = new ImageIcon(newImage);
-        mainTitle.setText("yOuR rEcIpE bOoK");  // set text of label
         mainTitle.setIcon(mainTitleImage);
-        mainTitle.setHorizontalTextPosition(JLabel.CENTER);   // set text LEFT, CENTER, RIGHT of imageicon
-        mainTitle.setVerticalTextPosition(JLabel.BOTTOM);   // set text TOP, CENTER, BOTTOM of imageicon
-        mainTitle.setForeground(new Color(182, 229, 30));  // set font color
-        mainTitle.setFont(MAIN_TITLE_FONT);  // set font of text
-        //mainTitle.setIconTextGap(0); // set gap of text to image
-        //mainTitle.setBackground(BACKGROUND_COLOUR); // set background color
-        //mainTitle.setOpaque(true); // displays background color i.e. makes it visible
-        mainTitle.setVerticalAlignment(JLabel.TOP); // set vertical pos of icon+text within label
-        mainTitle.setHorizontalAlignment(JLabel.CENTER);  // set horiz. pos of icon+text within label
 
+        Border mainTitleBorder = BorderFactory.createMatteBorder(40, 0, 0, 0, Color.ORANGE); // creating border
+        Border mainTitleBorderFull = BorderFactory.createTitledBorder(mainTitleBorder, "Iguana's Recipe Book",
+                TitledBorder.CENTER, TitledBorder.DEFAULT_POSITION, MAIN_TITLE_FONT, Color.BLACK);
 
-        Border mainTitleBorder = BorderFactory.createLineBorder(Color.PINK, 10); // creating border
-        mainTitle.setBorder(mainTitleBorder); // sets border
+        /* IMPLEMENTED BY createTitleBorder function */
+//        mainTitle.setText("Iguana's Recipe Book");  // set text of label
+//        mainTitle.setHorizontalTextPosition(JLabel.CENTER);   // set text LEFT, CENTER, RIGHT of imageicon
+//        mainTitle.setVerticalTextPosition(JLabel.BOTTOM);   // set text TOP, CENTER, BOTTOM of imageicon
+//        mainTitle.setForeground(new Color(0, 0, 0));  // set font color
+//        mainTitle.setFont(MAIN_TITLE_FONT);  // set font of text
+//        mainTitle.setIconTextGap(0); // set gap of text to image
+//        mainTitle.setBackground(BACKGROUND_COLOUR); // set background color
+//        mainTitle.setOpaque(true); // displays background color i.e. makes it visible
+//        mainTitle.setVerticalAlignment(JLabel.TOP); // set vertical pos of icon+text within label
+//        mainTitle.setHorizontalAlignment(JLabel.CENTER);  // set horiz. pos of icon+text within label
+
+        mainTitle.setBorder(mainTitleBorderFull); // sets border
+
 
 
         return mainTitle;
+    }
+
+    // figure out how to make the background of title same color as border (orange)
+    private JLabel titlePageLabel() {
+        titleLabel.setText("Iguana's Recipe Book");
+        //titleLabel.setSize(WIDTH / (3 / 2), HEIGHT / ((1 / 5) * (3 / 2)));
+        titleLabel.setForeground(Color.BLACK);
+        titleLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 50));
+        titleLabel.setBackground(new Color(211, 205, 138));
+        titleLabel.setOpaque(false);
+
+        return titleLabel;
     }
 
     // MODIFIES: this
